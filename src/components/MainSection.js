@@ -7,11 +7,12 @@ import AddToCart from "./AddToCart";
 import Cart from "./Cart";
 
 const MainSection = ({ cartIsOpen }) => {
-  const [heroImg, setHeroImg] = useState(images);
+  const [heroImg, setHeroImg] = useState([]);
   const [counter, setCounter] = useState(0);
   const [cartItem, setCartItem] = useState(0);
   const [howMany, setHowMany] = useState(0);
   const [isMainImgClick, setIsMainImgClick] = useState(false);
+  setHeroImg(images);
 
   const mainImg = useRef(null);
   const modalImg = useRef(null);
