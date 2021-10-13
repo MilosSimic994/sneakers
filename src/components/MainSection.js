@@ -1,5 +1,5 @@
-import { useState, useRef } from "react";
-import images from "../dataImg";
+import { useState, useRef, useEffect } from "react";
+import heroImg from "../dataImg";
 import LeftArrow from "../images/icon-previous.svg";
 import RightArrow from "../images/icon-next.svg";
 import CloseIcon from "../images/icon-close.svg";
@@ -7,12 +7,11 @@ import AddToCart from "./AddToCart";
 import Cart from "./Cart";
 
 const MainSection = ({ cartIsOpen }) => {
-  const [heroImg, setHeroImg] = useState([]);
+  // const [heroImg, setHeroImg] = useState([]);
   const [counter, setCounter] = useState(0);
   const [cartItem, setCartItem] = useState(0);
   const [howMany, setHowMany] = useState(0);
   const [isMainImgClick, setIsMainImgClick] = useState(false);
-  setHeroImg(images);
 
   const mainImg = useRef(null);
   const modalImg = useRef(null);
