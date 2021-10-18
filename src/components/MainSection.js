@@ -89,7 +89,7 @@ const {cartItem, setCartItem, cartIsOpen, openCart} = useGlobalContext()
             </span>
             {heroImg.map((img,index) => {
               return (
-                <a href='#'   onClick={changeThumbnailModal} key={index}>
+                <a href='#q'   onClick={changeThumbnailModal} key={index}>
                 <img
                   className={`thumbnail ${img.url === selectedImg ? 'active' : ''}`}
                   src={img.url}
