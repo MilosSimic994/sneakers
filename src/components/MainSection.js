@@ -50,7 +50,7 @@ const {cartItem, setCartItem, cartIsOpen, openCart} = useGlobalContext()
   };
 
   const addToCart = () => {
-    setCartItem(howMany);
+    setCartItem(cartItem + howMany);
     setHowMany(0);
   };
   const changeThumbnail = (e) => {
