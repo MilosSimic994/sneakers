@@ -6,11 +6,13 @@ import CloseIcon from "../images/icon-close.svg";
 import AddToCart from "./AddToCart";
 import Cart from "./Cart";
 import Modal from './Modal'
+import { useGlobalContext } from "../Context";
 
 const MainSection = ({ cartIsOpen, openCart}) => {
-  // const [heroImg, setHeroImg] = useState([]);
+const {cartItem, setCartItem} = useGlobalContext()
+
   const [counter, setCounter] = useState(0);
-  const [cartItem, setCartItem] = useState(0);
+  // const [cartItem, setCartItem] = useState(0);
   const [howMany, setHowMany] = useState(0);
   const [isMainImgClick, setIsMainImgClick] = useState(false);
 

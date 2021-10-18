@@ -62,6 +62,22 @@ body {
   background: none;
   border: none;
   outline: none;
+  position: relative;
+}
+.rightMenu button span {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: hsl(26, 100%, 55%);
+  width: 20px;
+  height: 20px;
+  z-index: 15;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .rightMenu img {
   cursor: pointer;

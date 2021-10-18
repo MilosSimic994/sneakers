@@ -4,8 +4,10 @@ import Logo from "../images/logo.svg";
 import Avatar from "../images/image-avatar.png";
 import Cart from "../images/icon-cart.svg";
 import MobMenu from "./MobMenu";
+import { useGlobalContext } from "../Context";
 
 const MainNav = ({ openCart }) => {
+  const {cartItem} = useGlobalContext()
   const [isOpen, setIsOpen] = useState(false);
   return (
     <nav className="main-nav">
@@ -34,6 +36,7 @@ const MainNav = ({ openCart }) => {
       </div>
       <div className="rightMenu">
         <button  onClick={openCart}>
+        {cartItem ? <span>{cartItem}</span> : ''}
         <img src={Cart} alt="" />
         </button>
         

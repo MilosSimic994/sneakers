@@ -3,7 +3,7 @@ import MainSection from "./components/MainSection";
 import { useState } from "react";
 function App() {
   const [cartIsOpen, setCartIsOpen] = useState(false);
-  const openCart = (e) => {
+  const openCart = (    ) => {
     
     setCartIsOpen(!cartIsOpen);
   };
