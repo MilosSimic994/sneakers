@@ -6,8 +6,8 @@ import Cart from "../images/icon-cart.svg";
 import MobMenu from "./MobMenu";
 import { useGlobalContext } from "../Context";
 
-const MainNav = ({ openCart }) => {
-  const {cartItem} = useGlobalContext()
+const MainNav = () => {
+  const {cartItem, openCart} = useGlobalContext()
   const [isOpen, setIsOpen] = useState(false);
   return (
     <nav className="main-nav">

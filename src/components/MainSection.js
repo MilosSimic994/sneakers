@@ -8,16 +8,18 @@ import Cart from "./Cart";
 import Modal from './Modal'
 import { useGlobalContext } from "../Context";
 
-const MainSection = ({ cartIsOpen, openCart}) => {
-const {cartItem, setCartItem} = useGlobalContext()
+const MainSection = () => {
+const {cartItem, setCartItem, cartIsOpen, openCart} = useGlobalContext()
+
 
   const [counter, setCounter] = useState(0);
-  // const [cartItem, setCartItem] = useState(0);
   const [howMany, setHowMany] = useState(0);
   const [isMainImgClick, setIsMainImgClick] = useState(false);
 
   const mainImg = useRef(null);
   const modalImg = useRef(null);
+
+  const [selectedImg,setSelectedImg] = useState(heroImg[counter].url)
 
   const checkNumber = (number) => {
     if (number > heroImg.length - 1) {
@@ -54,18 +56,16 @@ const {cartItem, setCartItem} = useGlobalContext()
   const changeThumbnail = (e) => {
     mainImg.current.src = e.target.getAttribute("src");
     console.log(mainImg);
-    document
-      .querySelectorAll(".thumbnail")
-      .forEach((img) => img.classList.remove("active"));
-    e.target.classList.add("active");
+    // document
+    //   .querySelectorAll(".thumbnail")
+    //   .forEach((img) => img.classList.remove("active"));
+    // e.target.classList.add("active");
+    setSelectedImg(e.target.getAttribute('src'))
   };
   const changeThumbnailModal = (e) => {
     modalImg.current.src = e.target.getAttribute("src");
-    console.log(mainImg);
-    document
-      .querySelectorAll(".thumbnail")
-      .forEach((img) => img.classList.remove("active"));
-    e.target.classList.add("active");
+
+    setSelectedImg(e.target.getAttribute('src'))
   };
 
   const closeModalImg = (e) => {
@@ -87,13 +87,13 @@ const {cartItem, setCartItem} = useGlobalContext()
               onClick={() => setIsMainImgClick(false)}>
               <img src={CloseIcon} alt="" />
             </span>
-            {heroImg.map((img) => {
+            {heroImg.map((img,index) => {
               return (
-                <a href='/'   onClick={changeThumbnailModal}>
+                <a href='#'   onClick={changeThumbnailModal} key={index}>
                 <img
-                  className="thumbnail"
+                  className={`thumbnail ${img.url === selectedImg ? 'active' : ''}`}
                   src={img.url}
-                  key={img.name}
+                  
                   alt=""
                 
                 />
@@ -126,7 +126,7 @@ const {cartItem, setCartItem} = useGlobalContext()
           {heroImg.map((img) => {
             return (
               <img
-                className="thumbnail"
+                className={`thumbnail ${img.url === selectedImg ? 'active' : ''}`}
                 src={img.url}
                 key={img.name}
                 alt=""

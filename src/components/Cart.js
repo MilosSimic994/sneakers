@@ -1,7 +1,9 @@
 import React from "react";
 import Trash from "../images/icon-delete.svg";
+import { useGlobalContext } from "../Context";
 
-const Cart = ({ cartItem, setCartItem }) => {
+const Cart = () => {
+  const {cartItem, setCartItem} = useGlobalContext()
   return (
     <div className="cart">
       <h2>Cart</h2>
