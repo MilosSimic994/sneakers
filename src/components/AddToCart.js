@@ -5,9 +5,15 @@ const AddToCart = ({ howMany, increase, decrease, addToCart }) => {
   return (
     <div className="add-to-cart">
       <div className="counter">
-        <img src={Minus} alt="" onClick={decrease} />
+        <button onClick={decrease}>
+             <img src={Minus} alt=""  />
+        </button>
+       
         <p>{howMany} </p>
-        <img src={Plus} alt="" onClick={increase} />
+        <button onClick={increase}>
+           <img src={Plus} alt=""  />
+        </button>
+       
       </div>
       <button onClick={addToCart}>
         <img src="/images/icon-cart.svg" alt="" />

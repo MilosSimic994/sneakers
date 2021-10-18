@@ -15,12 +15,15 @@ const Cart = ({ cartItem, setCartItem }) => {
               {`$125.00 x ${cartItem} `} <span>${125 * cartItem}</span>
             </p>
           </div>
+          <button>
           <img
             src={Trash}
             alt=""
             className="delete"
             onClick={() => setCartItem(0)}
           />
+            </button>
+         
           <button>Checkout</button>
         </div>
       ) : (

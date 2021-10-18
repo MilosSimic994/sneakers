@@ -5,8 +5,9 @@ import RightArrow from "../images/icon-next.svg";
 import CloseIcon from "../images/icon-close.svg";
 import AddToCart from "./AddToCart";
 import Cart from "./Cart";
+import Modal from './Modal'
 
-const MainSection = ({ cartIsOpen }) => {
+const MainSection = ({ cartIsOpen, openCart}) => {
   // const [heroImg, setHeroImg] = useState([]);
   const [counter, setCounter] = useState(0);
   const [cartItem, setCartItem] = useState(0);
@@ -71,6 +72,8 @@ const MainSection = ({ cartIsOpen }) => {
     }
   };
 
+ 
+
   return (
     <div className="main-section">
       {isMainImgClick && (
@@ -84,27 +87,35 @@ const MainSection = ({ cartIsOpen }) => {
             </span>
             {heroImg.map((img) => {
               return (
+                <a href='/'   onClick={changeThumbnailModal}>
                 <img
                   className="thumbnail"
                   src={img.url}
                   key={img.name}
                   alt=""
-                  onClick={changeThumbnailModal}
+                
                 />
+                </a>
               );
             })}
           </div>
         </div>
       )}
-      {cartIsOpen && <Cart cartItem={cartItem} setCartItem={setCartItem} />}
 
+  
+   {cartIsOpen && <Cart cartItem={cartItem} setCartItem={setCartItem} />}
+   {cartIsOpen && <Modal openCart={openCart} />}
+
+    
       <div className="hero-section">
+
         <img
           src={heroImg[counter].url}
           alt=""
           ref={mainImg}
           onClick={() => setIsMainImgClick(true)}
         />
+     
         <div className="slider-control">
           <img src={LeftArrow} alt="" onClick={prevImgHandler} />
           <img src={RightArrow} alt="" onClick={nextImgHandler} />

@@ -11,7 +11,8 @@ const MainNav = ({ openCart }) => {
     <nav className="main-nav">
       {isOpen && <MobMenu setIsOpen={setIsOpen} />}
       <div className="leftMenu">
-        <img src={Menu} alt="" onClick={() => setIsOpen(!isOpen)} />
+        <button> <img src={Menu} alt="" onClick={() => setIsOpen(!isOpen)} /></button>
+        
         <img src={Logo} alt="" />
         <ul>
           <li>
@@ -32,7 +33,10 @@ const MainNav = ({ openCart }) => {
         </ul>
       </div>
       <div className="rightMenu">
-        <img src={Cart} alt="" onClick={openCart} />
+        <button  onClick={openCart}>
+        <img src={Cart} alt="" />
+        </button>
+        
         <img src={Avatar} alt="" />
       </div>
     </nav>

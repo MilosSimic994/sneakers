@@ -14,7 +14,10 @@ a {
 body {
   font-family: "Kumbh Sans", sans-serif;
   position: relative;
+
 }
+
+
 
 .main-nav {
   display: flex;
@@ -26,10 +29,17 @@ body {
   flex: 0 0 50%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
 }
 .leftMenu img {
   cursor: pointer;
+}
+
+.leftMenu button {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
 }
 
 .leftMenu ul {
@@ -48,6 +58,11 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+.rightMenu button {
+  background: none;
+  border: none;
+  outline: none;
+}
 .rightMenu img {
   cursor: pointer;
 }
@@ -59,8 +74,9 @@ body {
   width: 100%;
   position: relative;
 }
-.hero-section > img {
-  width: 100%;
+
+.hero-section  > img {
+  width:100%;
 }
 
 .slider-control {
@@ -149,13 +165,21 @@ body {
   margin-bottom: 15px;
   border-radius: 20px;
 }
-.counter img {
-  width: 10px;
-  height: 8px;
+.counter button  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   cursor: pointer;
+  background: none;
+  border: none;
 }
 
-.add-to-cart button {
+.counter button img {
+  width: 15px;
+}
+
+.add-to-cart > button {
   width: 100%;
   background-color: hsl(26, 100%, 55%);
   padding: 15px 0;
@@ -169,7 +193,7 @@ body {
   cursor: pointer;
   border: none;
 }
-.add-to-cart button::after {
+.add-to-cart > button::after {
   content: "";
   height: 20px;
   filter: blur(50px);
@@ -179,7 +203,7 @@ body {
   z-index: -1;
 }
 
-.add-to-cart button img {
+.add-to-cart > button img {
   padding-right: 15px;
 }
 /* Modal - mob menu */
@@ -208,6 +232,10 @@ body {
   width: 60%;
   padding: 20px;
 }
+.modal ul button {
+  background: none;
+  border: none;
+}
 .modal ul img {
   padding-top: 10px;
   padding-bottom: 25px;
@@ -219,6 +247,7 @@ body {
   color: #222;
   font-weight: 700;
 }
+
 
 .modal ul.close-modal {
   animation: mobmenu 1s;
@@ -251,6 +280,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   color: hsl(220, 14%, 75%);
 }
 
@@ -262,6 +292,10 @@ body {
   color: #222;
 }
 .cart-item button {
+  background: none;
+  border: none;
+}
+.cart-item button:last-child {
   flex: 0 0 100%;
   background-color: hsl(26, 100%, 55%);
   border: none;
@@ -294,6 +328,15 @@ body {
   }
 }
 
+.modal-global {
+  position: absolute;
+  top: 86px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(155, 139, 139, 0.39);
+  z-index: 4;
+}
 /* @media */
 
 @media (min-width: 1440px) {
@@ -309,9 +352,10 @@ body {
     padding: 40px 0 20px;
     border-bottom: 2px solid hsl(223, 64%, 98%);
   }
-  .leftMenu img:first-of-type {
+  .leftMenu button{
     display: none;
   }
+
 
   .leftMenu ul {
     display: flex;
@@ -330,7 +374,7 @@ body {
     justify-content: flex-end;
     gap: 25px;
   }
-  .rightMenu img:last-of-type:hover {
+  .rightMenu > img:last-of-type:hover {
     outline: 2px solid hsl(26, 100%, 55%);
     border-radius: 50%;
   }
@@ -381,21 +425,22 @@ body {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .add-to-cart {
     flex-direction: row;
     align-items: center;
     gap: 10px;
   }
-  .add-to-cart button,
+  .add-to-cart > button,
   .counter {
     margin-bottom: revert;
     border-radius: 10px;
   }
-  .add-to-cart button {
+  .add-to-cart > button {
     flex: 0 0 65%;
     box-shadow: 0px 20px 25px -10px hsla(26, 100%, 55%, 0.623);
   }
-  .add-to-cart button:hover {
+  .add-to-cart > button:hover {
     background-color: hsla(26, 100%, 55%, 0.541);
   }
   /* cart */

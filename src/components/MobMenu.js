@@ -16,7 +16,10 @@ const MobMenu = ({ setIsOpen }) => {
   return (
     <div className="modal" onClick={closeModal}>
       <ul>
-        <img src={Close} alt="" onClick={closeWithAnimation} />
+        <button onClick={closeWithAnimation}>
+               <img src={Close} alt=""  />
+        </button>
+     
         <li>
           <a href="/">Collections</a>
         </li>
